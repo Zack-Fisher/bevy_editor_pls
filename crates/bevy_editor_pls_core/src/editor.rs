@@ -28,6 +28,10 @@ impl Plugin for EditorPlugin {
                 CoreStage::PostUpdate,
                 Editor::system.at_start().label(EguiSystem::ProcessOutput),
             );
+        
+        app
+            .add_plugin(crate::prefab_loader::PrefabLoaderPlugin)
+            ;
     }
 }
 

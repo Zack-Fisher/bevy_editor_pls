@@ -1,5 +1,6 @@
 pub mod editor;
 pub mod editor_window;
+pub mod prefab_loader;
 
 pub use editor::{Editor, EditorEvent, EditorPlugin, EditorState};
 

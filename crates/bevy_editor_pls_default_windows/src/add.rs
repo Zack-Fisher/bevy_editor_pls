@@ -129,6 +129,8 @@ pub fn add_ui<'a>(ui: &mut egui::Ui, state: &'a AddWindowState) -> Option<&'a Ad
     None
 }
 
+//this is where we can define all the add-able types in the editor.
+//how can this be modified from another crate?
 impl Default for AddWindowState {
     fn default() -> Self {
         let mut state = AddWindowState {
