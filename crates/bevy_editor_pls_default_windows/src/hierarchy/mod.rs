@@ -141,6 +141,13 @@ impl<'a> Hierarchy<'a> {
             type_registry: self.type_registry,
             selected,
             context_menu: Some(&mut |ui, entity, world, rename_info| {
+                if ui.button("Spawn child").clicked() {
+                    //just add the most basic child, so that people can build onto it.
+                    let child = world.spawn(SpatialBundle::default()).id();
+
+                    world.entity_mut(entity).push_children(&[child]);
+                }
+
                 if ui.button("Despawn").clicked() {
                     despawn_recursive = Some(entity);
                 }
