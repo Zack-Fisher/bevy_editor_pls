@@ -2,9 +2,12 @@ use bevy::prelude::*;
 use bevy_editor_pls_core::editor_window::{EditorWindow, EditorWindowContext};
 use bevy_inspector_egui::egui::{self, RichText};
 
+use serde::{Serialize, Deserialize};
+
 const DEFAULT_FILENAME: &str = "scene.scn.ron";
 
-#[derive(Default, Component)]
+#[derive(Default, Component, Reflect, Serialize, Deserialize)]
+#[reflect(Component, Serialize, Deserialize)]
 pub struct InScene;
 
 #[derive(Default)]
