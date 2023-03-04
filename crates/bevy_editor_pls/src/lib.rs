@@ -15,7 +15,7 @@ pub use bevy_editor_pls_default_windows as default_windows;
 
 pub mod prelude {
     pub use crate::{AddEditorWindow, EditorPlugin};
-    pub use bevy_editor_pls_default_windows::scenes::NotInScene;
+    pub use bevy_editor_pls_default_windows::scenes::InScene;
 }
 
 pub struct EditorPlugin;

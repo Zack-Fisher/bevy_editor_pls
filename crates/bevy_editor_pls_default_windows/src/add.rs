@@ -139,7 +139,7 @@ impl Default for AddWindowState {
 
         state.add(
             "",
-            AddItem::component::<crate::scenes::NotInScene>(),
+            AddItem::component::<crate::scenes::InScene>(),
         );
 
         state.add("Core", AddItem::component::<Name>());

@@ -5,7 +5,7 @@ use bevy_inspector_egui::egui::{self, RichText};
 const DEFAULT_FILENAME: &str = "scene.scn.ron";
 
 #[derive(Default, Component)]
-pub struct NotInScene;
+pub struct InScene;
 
 #[derive(Default)]
 pub struct SceneWindowState {
@@ -40,7 +40,8 @@ impl EditorWindow for SceneWindow {
                 } else {
                     &state.filename
                 };
-                let mut query = world.query_filtered::<Entity, Without<NotInScene>>();
+                //only serialize the entities that have this component from the prelude attached!!
+                let mut query = world.query_filtered::<Entity, With<InScene>>();
                 let entitys = query.iter(world).collect();
                 state.scene_save_result = Some(save_world(world, filename, entitys));
             }

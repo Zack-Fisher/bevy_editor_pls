@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version 0.3
+- replace `NotInScene` with `InScene`
 - add `NotInScene` component to skip entity when saving to scene
 - update egui etc.
 - update to bevy-inspector-egui 0.16
